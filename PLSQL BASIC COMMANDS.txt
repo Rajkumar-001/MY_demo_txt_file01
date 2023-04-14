@@ -1,0 +1,72 @@
+PLSQL BASIC COMMANDS:
+
+
+-- THIS SYNTAX IS USED FOR ITERATION--
+
+
+Declare
+i number(1);
+j number(1);
+begin 
+for i in 1..10 loop
+for j in 1..10 loop
+dbms_output.put_line('The value of i is'||i||'The value of j is'||j);
+end loop inner_loop;
+end loop outer_loop;
+end;
+
+
+
+
+--SQL AND PLSQL --
+
+Create table   Employee1(
+    employee_id int,
+    employee_first_name varchar(20),
+    employee_last_name varchar(20),
+    department varchar(20),
+    address varchar(20)
+
+);
+
+
+INSERT INTO Employee1 (employee_id, employee_first_name, employee_last_name, department, address)
+VALUES (1, 'John', 'Smith', 'Marketing', '123 Main St');
+INSERT INTO Employee1 (employee_id, employee_first_name, employee_last_name, department, address)
+VALUES (2, 'Rajkrpandey', 'sandeep', 'Finance', '123 Main St');
+
+select* from employee1;
+INSERT INTO Employee1 (employee_id, employee_first_name, employee_last_name, department, address)
+VALUES (3, 'Rishu', 'sandeep', 'Finance', '123 Main St');
+INSERT INTO Employee1 (employee_id, employee_first_name, employee_last_name, department, address)
+VALUES (4, 'shubham', 'Akash', 'management', '123 Main St');
+
+select * from employee1;
+
+declare
+name varchar(100);
+begin
+select Employee_first_name into name from employee1 where employee_id=4;
+dbms_output.put_line('The output is'|| name);
+end;
+
+--CONDTIONAL IF AND ELSE IN PLSQL--
+DECLARE
+  num1 INT;
+  num2 INT;
+BEGIN 
+  num1 := :num1;
+  num2 := :num2;
+  
+IF num1 > num2
+THEN
+    dbms_output.put_line('Greater than');
+ELSE
+    dbms_output.put_line('Less than');
+END IF;
+END;
+
+
+
+       
+
